@@ -1,0 +1,20 @@
+{
+	"name": "geneatree-server",
+	"type": "module",
+	"version": "1.0.0",
+	"description": "back-end for geneatree",
+	"dependencies": {
+		"@thoughtsunificator/config-env": "^1.0.3",
+		"mongodb": "^3.6.2",
+		"ws": "^7.3.1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/thoughtsunificator/geneatree-server.git"
+	},
+	"bugs": {
+		"url": "https://github.com/thoughtsunificator/geneatree-server/issues"
+	},
+	"author": "Romain Lebesle <oss@thoughtsunificator.me> (https://thoughtsunificator.me)",
+	"license": "MIT"
+}
