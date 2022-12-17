@@ -1,19 +1,19 @@
 export default (MongoDB, database) => [
 	{
-		query: "tree add",
+		query: "treeAdd",
 		callback: async (data, webSocket) => {
 			const objectDocument = await database.collection("trees").insertOne({ meta: data.meta })
-			webSocket.send(JSON.stringify({ query: "tree added", data: { id: data.id, networkId: objectDocument.insertedId } }))
+			webSocket.send(JSON.stringify({ query: "treeAdded", data: { id: data.id, networkId: objectDocument.insertedId } }))
 		}
 	},
 	{
-		query: "tree update",
+		query: "treeUpdate",
 		callback: async data => {
 			database.collection("trees").updateOne({"_id": MongoDB.ObjectID(data.networkId) }, { $set: { meta: data.form } })
 		}
 	},
 	{
-		query: "tree remove",
+		query: "treeRemove",
 		callback: async data => {
 			database.collection("trees").deleteOne({"_id": MongoDB.ObjectID(data.networkId) })
 		}
