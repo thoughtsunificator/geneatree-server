@@ -44,7 +44,7 @@ import config from "@thoughtsunificator/config-env"
 		const individuals = await _database.collection("individuals").find().toArray()
 		const notes = await _database.collection("notes").find().toArray()
 
-		webSocket.send(JSON.stringify({ query: "treesLoad", data: { trees, individuals, notes } }))
+		webSocket.send(JSON.stringify({ query: "load", data: { trees, individuals, notes } }))
 
 	})
 
